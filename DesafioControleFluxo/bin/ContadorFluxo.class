@@ -1,0 +1,36 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+package candidatura;
+
+import java.util.Scanner;
+
+public class ContadorFluxo {
+   public ContadorFluxo() {
+   }
+
+   public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
+      System.out.println("digite o primerio numero");
+      int numeroUm = scanner.nextInt();
+      System.out.println("digite o segundo numero");
+      int numeroDois = scanner.nextInt();
+
+      try {
+         contar(numeroUm, numeroDois);
+      } catch (ParametrosInvalidosException var5) {
+         System.out.println("o numero deve ser maior");
+      }
+
+      scanner.close();
+   }
+
+   static void contar(int numeroUm, int numeroDois) throws ParametrosInvalidosException {
+      if (numeroUm > numeroDois) {
+         throw new ParametrosInvalidosException();
+      } else {
+         for(int i = 1; i <= numeroUm - numeroDois; ++i) {
+            System.out.println(i);
+         }
+
+      }
+   }
+}
